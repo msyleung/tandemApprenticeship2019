@@ -49,6 +49,7 @@ TBD
 
 ### Additional Features
 - Better UI
-- Images for each Plants
+- Images & Bio (with NAMEs!!!) for each Plants
 - ActiveRecord Time CLI (just 'cause)
 - Scrolling plant calendar on Web UI
+- rubocop
