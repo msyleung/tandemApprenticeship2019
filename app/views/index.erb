@@ -1,4 +1,4 @@
-<% PlantData.each do |plant| %>
+<% @plants.each do |plant| %>
 <div class="container-fluid bg-<%= plant['name'] %> text-left" id="<%= plant['name'] %>" >
   <h3 class="margin" ><%= plant['name'] %></h3>
 </div>

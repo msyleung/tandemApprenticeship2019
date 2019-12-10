@@ -1,5 +1,5 @@
 # Tandem Apprenticeship 2019 Challenge
-## Prompt: We grow in Tandem! :plant-emoji: 
+## Prompt: We grow in Tandem! :plant-emoji:
 
 ### Goal
 Your goal is to create an application that generates a watering schedule for the next 12 weeks for all of our plants.
@@ -19,8 +19,8 @@ In the `app/` directory
 Run `bundle install`
 
 ### Web Usage
-In the `app/` directory
-Run `ruby watering_schedule.rb`
+After having completed the installation process
+In the `app/` directory, run `rackup -p 4567`
 Go to `http://localhost:4567/`
 
 ### CLI Usage
