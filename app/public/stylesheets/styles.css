@@ -1,0 +1,46 @@
+body {
+  font: 20px Inconsolata, sans-serif;
+  line-height: 1.8;
+  color: #000000;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.container-fluid {
+  padding-top: 0px;
+  padding-right: 25%;
+  padding-bottom: 0px;
+  padding-left: 25%;
+  /* padding: 70px 15% 70px 15%; */
+}
+
+.margin {
+  margin-bottom: 45px;
+}
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+.navbar-nav  li a:hover {
+  color: #1abc9c !important;
+}
