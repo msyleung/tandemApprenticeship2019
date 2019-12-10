@@ -6,6 +6,8 @@ Your goal is to create an application that generates a watering schedule for the
 
 <!-- We would also like to see a README which includes any information about how to run the code, any known issues or complexity we should look out for, and any additional features you would like to have added to make your scheduler even more awesome. -->
 
+------------------
+
 ### Assumptions / Rules
 - We do not water our plants on a weekend. Work-life balance is important, and we shouldn't be in the office on a weekend.
 - Our plants are reasonably tolerant and will still be happy if they are watered a day before or after the day they should be watered.
@@ -14,25 +16,39 @@ Your goal is to create an application that generates a watering schedule for the
 - All plants will be watered on the first day of the schedule (next Monday).
 - We recognize that when to water a plant is heavily dependent on other factors such as soil, weather, humidity, etc. You can assume that we know exactly when to water these specific plants. You have been provided a JSON file which contains data for our plants.
 
+------------------
+
 ### Installation
-In the `app/` directory
+In the `app/` directory  
 Run `bundle install`
 
+------------------
+
 ### Web Usage
-After having completed the installation process
-In the `app/` directory, run `rackup -p 4567`
+After having completed the installation process  
+In the `app/` directory, run `rackup -p 4567`  
 Go to `http://localhost:4567/`
 
 ### CLI Usage
 TBD
 
-### Test
+------------------
+
+### Test Suites
 TBD
+
+------------------
 
 ### Complexity
 
+------------------
+
 ### Issues
+
+------------------
 
 ### Additional Features
 - Better UI
 - Images for each Plants
+- ActiveRecord Time CLI (just 'cause)
+- Scrolling plant calendar on Web UI
