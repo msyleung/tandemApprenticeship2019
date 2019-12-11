@@ -8,7 +8,7 @@ module Plant
 
   def load_plants()
     today = Time.now
-    @start_date = Time.parse('Dec 09 2019')
+    @start_date = Time.parse('Dec 16 2019')
     @end_date = @start_date + 12.weeks
     @plants = JSON.parse(File.read('./Tandem_Apprentice_2019_Challenge/Apprentice_WeGrowInTandem_Data.json'))
   end
