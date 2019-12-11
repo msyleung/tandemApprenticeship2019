@@ -37,17 +37,21 @@ usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [
 ------------------
 
 ### Test Suites
-TBD
+
 
 ------------------
 
 ### Complexity
-O(n^2) in some areas...
+O(n^2) in some areas...  
 Maybe O(n^n) in others...
 
 ------------------
 
 ### Issues
+- Disrespecting the MVC :(
+- Logic is too complicated
+- Plant date logic breaks for `water_after: 364 days` for some reason
+- Not scalable
 
 ------------------
 
