@@ -2,6 +2,10 @@ require 'active_support/all'
 
 module Plant
 
+  def test
+    42
+  end
+
   def load_plants()
     today = Time.now
     @start_date = Time.parse('Dec 09 2019')
