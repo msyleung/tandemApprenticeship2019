@@ -30,7 +30,9 @@ In the `app/` directory, run `rackup -p 4567`
 Go to `http://localhost:4567/`
 
 ### CLI Usage
-TBD
+```
+usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [-a] [show all]
+```
 
 ------------------
 
@@ -40,6 +42,8 @@ TBD
 ------------------
 
 ### Complexity
+O(n^2) in some areas...
+Maybe O(n^n) in others...
 
 ------------------
 
@@ -47,9 +51,14 @@ TBD
 
 ------------------
 
-### Additional Features
-- Better UI
+### Future Features
+- Better UI for specific pages (`/plants`)
 - Images & Bio (with NAMEs!!!) for each Plants
-- ActiveRecord Time CLI (just 'cause)
-- Scrolling plant calendar on Web UI
+- ~ActiveRecord Time CLI (just 'cause)~ - watering_cli.rb :grin:
+- ~Scrolling plant calendar on Web UI~ kind of -- it's got pagination(ish)
+- Revisit logic & make it smarter -- it looks redundant in a few spots
+- Make CLI smarter with combined options (`-dp`)
+- if data gets large - a database for Web would probably be a good idea
+- support adding/editing new plants to Web
+- support loading another file in CLI
 - rubocop
