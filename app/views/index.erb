@@ -3,4 +3,10 @@
   <p>
   <p align="center">
     <%= greeting() %> There are <%= @plant_dates[Time.parse(today)].size %> plants that need attention today!</p>
+<% else %>
+  <div class="container-fluid text-left" >
+    <p align="center" style="margin-top: 20px">
+      <%= greeting() %> Today is <%= today %>
+      <br>There are no plants that need attention today!</p>
+  </div>
 <% end %>
