@@ -1,0 +1,27 @@
+<div class="container-fluid text-left margin" >
+  <div class="pagination">
+    <% if date - 1.day >= @start_date %>
+      <a href="/<%= pretty_link(date - 1.day)%>">&laquo;</a>
+    <% end %>
+    <a class="active" href="/<%= pretty_link(date) %>"><%= pretty_link(date) %></a>
+    <% if date + 1.day < @end_date %>
+      <a href="/<%= pretty_link(date + 1.day)%>">&raquo;</a>
+    <% end %>
+  </div>
+
+  <h3 class="margin" >
+    <% word_date = '%A, %B %d, %Y' %>
+    <%= date.strftime(word_date)  %>
+  </h3>
+
+  <% if plants.empty? %>
+    Nothing to water!
+  <% else %>
+    Please water the following: <br>
+    <center>
+    <% plants.sort.each do |plant| %>
+      <%= plant %><br>
+    <% end %>
+    </center>
+  <% end %>
+</div>

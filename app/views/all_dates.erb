@@ -1,0 +1,8 @@
+<div class="container-fluid text-left margin" >
+  <% @plant_dates.each do |key, values| %>
+    <h3 class="margin" >
+      <% word_date = '%A, %B %d, %Y' %>
+      <a href="/<%= pretty_link(key) %>"><%= key.strftime(word_date) %></a>
+    </h3>
+  <% end %>
+</div>

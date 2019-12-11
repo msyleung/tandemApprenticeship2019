@@ -1,0 +1,9 @@
+<% @plants.each do |plant| %>
+<div class="container-fluid text-left" id="<%= plant['name'] %>" >
+  <h3 class="margin" ><%= plant['name'] %> - Must be watered after <%= plant['water_after'] %></h3>
+  <% plant['dates'].each do |date| %>
+    <% word_date = '%A, %B %d, %Y' %>
+    <%= date.strftime(word_date)  %> <br>
+  <% end %>
+</div>
+<% end %>
