@@ -1,7 +1,4 @@
 module DateHelper
-  def today
-    Date.today.to_s
-  end
 
   def pretty_link(date)
     if date.class == Time
@@ -12,15 +9,15 @@ module DateHelper
   def greeting
     case Time.now.hour
     when 6..11
-      return "Good morning!"
+      "Good morning!"
     when 12..16
-      return "Good afternoon!"
+      "Good afternoon!"
     when 17..20
-      return "Good evening!"
+      "Good evening!"
     when 21..24
-      return "Hopefully you aren't watering the plants this late!"
+      "Hopefully you aren't watering the plants this late!"
     else
-      return "Do plants need to be watered in the middle of the night?"
+      "Do plants need to be watered in the middle of the night?"
     end
   end
 

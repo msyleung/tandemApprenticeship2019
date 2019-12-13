@@ -1,0 +1,5 @@
+<% @days.each do |day| %>
+  <h3 class="margin" >
+    <a href="/days/<%= day.date %>"><%= day.date.strftime('%A, %B %d, %Y') %></a>
+  </h3>
+<% end %>

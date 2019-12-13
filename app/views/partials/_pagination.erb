@@ -1,0 +1,9 @@
+<div class="pagination">
+  <% if (yester_day = current_day - 1.day) %>
+    <a href="/days/<%= yester_day%>">&laquo;</a>
+  <% end %>
+  <a class="active" href="/days"><%= current_day %></a>
+  <% if (morrow_day = current_day + 1.day) %>
+    <a href="/days/<%= morrow_day%>">&raquo;</a>
+  <% end %>
+</div>

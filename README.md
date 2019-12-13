@@ -19,15 +19,17 @@ Your goal is to create an application that generates a watering schedule for the
 ------------------
 
 ### Installation
-In the `app/` directory  
+In the root directory  
 Run `bundle install`
 
 ------------------
 
 ### Web Usage
 After having completed the installation process  
-In the `app/` directory, run `rackup -p 4567`  
+In the root directory, run `rake db:migrate db:seed` to create tables and populate the database  
+Then, run `rackup -p 4567`  
 Go to `http://localhost:4567/`
+
 
 ### CLI Usage
 ```
@@ -37,32 +39,42 @@ usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [
 ------------------
 
 ### Test Suites
-
+- Test for Big File Size
 
 ------------------
 
 ### Complexity
-O(n^2) in some areas...  
-Maybe O(n^n) in others...
+
 
 ------------------
 
 ### Issues
-- Disrespecting the MVC :(
-- Logic is too complicated
-- Plant date logic breaks for `water_after: 364 days` for some reason
-- Not scalable
+- ~Disrespecting the MVC :(~
+- ~Logic is too complicated~
+- ~Plant date logic breaks for `water_after: 364 days` for some reason~
+- ~Not~ maybe scalable
 
 ------------------
 
 ### Future Features
-- Better UI for specific pages (`/plants`)
-- Images & Bio (with NAMEs!!!) for each Plants
+- Allow mistakes for people who water a day before/after the designated date, but also prevent overwatering/underwatering
+- Images & Bio (with NAMEs!!!) for each Plants (API?) / support adding/editing new plants to Web
+- I could set up a Cronjob to schedule plant dates
+- Make CLI smarter with combined options (`-dp`)
+- Caching the data?
+- support loading another file in CLI
+- supporting another method of seeding the database
+- rubocop
+- ~Better UI for specific pages (`/plants`)~
 - ~ActiveRecord Time CLI (just 'cause)~ - watering_cli.rb :grin:
 - ~Scrolling plant calendar on Web UI~ kind of -- it's got pagination(ish)
-- Revisit logic & make it smarter -- it looks redundant in a few spots
-- Make CLI smarter with combined options (`-dp`)
-- if data gets large - a database for Web would probably be a good idea
-- support adding/editing new plants to Web
-- support loading another file in CLI
-- rubocop
+- ~Revisit logic & make it smarter -- it looks redundant in a few spots~
+- ~if data gets large - a database for Web would probably be a good idea~ I made a db
+
+
+------------------
+
+### Version History
+**0.2.0** Basic MVC                 - its basic
+**0.1.0** watering_cli.rb           - separated into classes, also created web UI
+**0.0.0** watering_cli_prototype.rb -  it works and it's brute forced

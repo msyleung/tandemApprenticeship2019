@@ -1,0 +1,5 @@
+<h3><a href="/plants"><%= @plant.name %></a></h3>
+Must be watered every <%= @plant.water_after %><br>
+<% @plant.days.each do |day| %>
+  <%= day.date  %> <br>
+<% end %>

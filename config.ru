@@ -1,3 +1,6 @@
-require './app/watering_schedule'
+require './config/environment'
 
-run WateringSchedule
+use Rack::MethodOverride
+run ApplicationController
+use PlantsController
+use DaysController

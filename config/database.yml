@@ -1,0 +1,11 @@
+development:
+  adapter: sqlite3
+  encoding: unicode
+  database: plant_development.sqlite
+  pool: 2
+
+production:
+  adapter: sqlite3
+  encoding: unicode
+  database: plant_production.sqlite
+  pool: 2

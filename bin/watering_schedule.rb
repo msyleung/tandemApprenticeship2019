@@ -1,13 +1,15 @@
 #!/usr/bin/env ruby
 require 'rubygems'
-require 'sinatra'
+require 'sinatra/base'
 require 'sinatra/reloader'
+require 'sinatra/activerecord'
+
 require_relative 'helpers/date'
-require_relative 'helpers/plant'
+require_relative 'models/plant'
 
 class WateringSchedule < Sinatra::Base
   helpers DateHelper
-  helpers Plant
+  use Plant
 
   configure :development do
     register Sinatra::Reloader
@@ -21,16 +23,8 @@ class WateringSchedule < Sinatra::Base
     @title = "Plant Site"
   end
 
-  get '/' do
-    erb :index
-  end
-
   get '/dates' do
     erb :all_dates
-  end
-
-  get '/plants' do
-    erb :all_plants
   end
 
   get '/:date' do
