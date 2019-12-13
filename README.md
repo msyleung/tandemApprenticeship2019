@@ -58,8 +58,8 @@ usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [
 
 ### Future Features
 - Allow mistakes for people who water a day before/after the designated date, but also prevent overwatering/underwatering
-- Images & Bio (with NAMEs!!!) for each Plants (API?) / support adding/editing new plants to Web
-- I could set up a Cronjob to schedule plant dates
+- Images & Bio (with NAMEs!!!) for each Plants (API?) / support adding/editing new plants to Web with :point_up_2: `gem 'friendly_id'` and use 'slug' for plants :snail:
+- I could set up a Cronjob to schedule plant dates - `gem 'sidekiq'`
 - Make CLI smarter with combined options (`-dp`)
 - Caching the data?
 - support loading another file in CLI
