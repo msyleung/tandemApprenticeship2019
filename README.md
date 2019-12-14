@@ -39,7 +39,37 @@ usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [
 ------------------
 
 ### Test Suites
-- Test for Big File Size
+`rspec -I . --format doc`
+- Test for 5 year difference in dates (big data)
+
+```
+DaysController
+  GET to /days
+    returns status 200 OK
+
+Day
+  basic functionality
+    runs
+    can use Day class methods
+  validity of Day
+    is valid with valid attributes
+    is valid with nil attributes
+    is not valid with pre-existing date
+  class method count_day
+    should equal 2 days for days between Dec 7 and Dec 9
+    should equal 0 days for days between Dec 7 and Dec 7
+    should equal -14 days for days between Dec 21 and Dec 7
+  class method check_weekday
+    should go from Sunday to Monday
+
+Plant
+  basic functionality
+    runs
+  validity of Plant
+    is valid with valid attributes
+    is valid with nil attributes
+    is not valid with 0 water after days
+```
 
 ------------------
 
@@ -57,8 +87,10 @@ usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [
 ------------------
 
 ### Future Features
+- Calendar frontend view
 - Allow mistakes for people who water a day before/after the designated date, but also prevent overwatering/underwatering
-- Images & Bio (with NAMEs!!!) for each Plants (API?) / support adding/editing new plants to Web with :point_up_2: `gem 'friendly_id'` and use 'slug' for plants :snail:
+- Images & Bio (with NAMEs!!!) for each Plants (API?) / support adding/editing new plants   
+Web with :point_up_2: `gem 'friendly_id'` and use 'slug' for plants :snail:
 - I could set up a Cronjob to schedule plant dates - `gem 'sidekiq'`
 - Make CLI smarter with combined options (`-dp`)
 - Caching the data?
@@ -75,6 +107,6 @@ usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [
 ------------------
 
 ### Version History
-**0.2.0** Basic MVC                 - its basic
-**0.1.0** watering_cli.rb           - separated into classes, also created web UI
-**0.0.0** watering_cli_prototype.rb -  it works and it's brute forced
+**0.2.0** Basic MVC                 - its basic  
+**0.1.0** watering_cli.rb           - separated into classes, also created web UI  
+**0.0.0** watering_cli_prototype.rb -  it works and it's brute forced  
