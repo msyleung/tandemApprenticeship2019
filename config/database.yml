@@ -1,14 +1,14 @@
 test:
-  adapter: sqlite3
+  adapter: postgresql
   encoding: unicode
-  database: plant_test.sqlite
+  database: plant_test
   pool: 2
 
 
 development:
-  adapter: sqlite3
+  adapter: postgresql
   encoding: unicode
-  database: plant_development.sqlite
+  database: plant_development
   pool: 2
 
 production:

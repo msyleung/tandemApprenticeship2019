@@ -9,6 +9,7 @@ gem 'sinatra-activerecord'
 gem 'rake'
 # Calendar view
 gem 'calendar_helper', '~> 0.2.6'
+gem 'pg'
 
 group :test do
   gem 'rspec'
@@ -17,11 +18,4 @@ end
 group :test, :development do
   gem 'better_errors'
   gem 'pry'
-  # Database
-  gem 'sqlite3'
-end
-
-group :production do
-  # Database for Heroku
-  gem 'pg'
 end

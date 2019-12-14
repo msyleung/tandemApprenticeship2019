@@ -67,7 +67,6 @@ GEM
       rack-protection (= 2.0.7)
       sinatra (= 2.0.7)
       tilt (~> 2.0)
-    sqlite3 (1.4.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tzinfo (1.2.5)
@@ -87,7 +86,6 @@ DEPENDENCIES
   sinatra (= 2.0.7)
   sinatra-activerecord
   sinatra-contrib
-  sqlite3
 
 RUBY VERSION
    ruby 2.4.1p111
