@@ -9,7 +9,6 @@ gem 'sinatra-activerecord'
 gem 'rake'
 # Calendar view
 gem 'calendar_helper', '~> 0.2.6'
-gem 'sqlite3', '~> 1.3.6'
 gem 'pg'
 
 group :test do
