@@ -8,12 +8,16 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+  configure :production, :development do
+    enable :logging
+  end
+
   before do
     @title = 'Plant Site'
   end
 
   get '/' do
-    @today = Day.today
+    @today = Day.where(date: '2019-12-16').first#Day.today
     @today_plants = @today.plants
     erb :index
   end

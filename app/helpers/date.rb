@@ -1,9 +1,22 @@
 module DateHelper
+  include CalendarHelper
 
   def pretty_link(date)
     if date.class == Time
       date.to_s.split(' ').first
     end
+  end
+
+  def render_calendar_cell(d)
+    msg = ''
+    link = "/days/#{d}"
+    msg += "<a href=#{link}>#{d.day}<br>"
+    if (!(date = Day.where(date: d).first).nil? && date.plants.size > 0)
+      msg += "🌱"
+    else
+      msg += "🆗"
+    end
+    msg += "</a>"
   end
 
   def greeting

@@ -15,10 +15,8 @@ a {
 }
 
 .container-fluid {
-  padding-top: 25px;
-  padding-right: 25%;
-  padding-bottom: 0px;
-  padding-left: 25%;
+  padding-right: 15%;
+  padding-left: 15%;
   /* padding: 70px 15% 70px 15%; */
 }
 
@@ -27,6 +25,7 @@ a {
 }
 
 .navbar {
+  z-index:1;
   padding-top: 15px;
   padding-bottom: 15px;
   border: 0;
@@ -41,6 +40,105 @@ a {
   width: 100%;
 }
 
+.navbar-default {
+  background-color: #b3f5df;
+}
+
 .navbar-nav  li a:hover {
   color: #1abc9c !important;
+}
+
+.calendar {
+  color: #000000;
+  text-align: center;
+  padding-right: 15%;
+  padding-left: 15%;
+}
+
+th {
+  text-align: center;
+}
+
+.monthName th {
+  font-weight: normal;
+  padding-top: 1em;
+  padding-bottom: 0.7em;
+  color: black;
+}
+
+.dayName th {
+  font-size: 0.8em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  background-color: #b3f5df;
+}
+
+.otherMonth, .day, .specialDay {
+  padding: 0.7em 1em;
+}
+
+.otherMonth {
+  background-color: #cbd1c2;
+}
+
+.day, .specialDay {
+  border: 1px solid #000000;
+  background-color: #d2fcc7;
+}
+.specialDay {
+  background-color: #a8a8a8;
+  color: black;
+}
+.specialDay a, .specialDay a:visited, .specialDay a:hover {
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+}
+.specialDay a:hover {
+  color: white;
+  background-color: black;
+}
+.weekendDay {
+  background-color: #b5c79b;
+}
+.today {
+	background-color: white;
+	color: black;
+}
+.weekNumber {
+  background-color: #222;
+}
+
+#wrapper .text {
+/* position: absolute; */
+visibility:hidden;
+font-size: 12px;
+margin-bottom: 0px;
+}
+
+#wrapper:hover .text {
+visibility:visible;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .calendar {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

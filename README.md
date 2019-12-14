@@ -44,10 +44,6 @@ usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [
 - Test for 5 year difference in dates (big data)
 
 ```
-DaysController
-  GET to /days
-    returns status 200 OK
-
 Day
   basic functionality
     runs
@@ -88,7 +84,6 @@ Plant
 ------------------
 
 ### Future Features
-- Calendar frontend view
 - Allow mistakes for people who water a day before/after the designated date, but also prevent overwatering/underwatering
 - Images & Bio (with NAMEs!!!) for each Plants (API?) / support adding/editing new plants   
 Web with :point_up_2: `gem 'friendly_id'` and use 'slug' for plants :snail:
@@ -96,14 +91,14 @@ Web with :point_up_2: `gem 'friendly_id'` and use 'slug' for plants :snail:
 - Make CLI smarter with combined options (`-dp`)
 - Caching the data?
 - support loading another file in CLI
-- supporting another method of seeding the database
+- supporting another method of seeding the database (CRUD for Plants & Days)
 - rubocop
+- ~Calendar frontend view~
 - ~Better UI for specific pages (`/plants`)~
 - ~ActiveRecord Time CLI (just 'cause)~ - watering_cli.rb :grin:
 - ~Scrolling plant calendar on Web UI~ kind of -- it's got pagination(ish)
 - ~Revisit logic & make it smarter -- it looks redundant in a few spots~
 - ~if data gets large - a database for Web would probably be a good idea~ I made a db
-
 
 ------------------
 
@@ -111,3 +106,15 @@ Web with :point_up_2: `gem 'friendly_id'` and use 'slug' for plants :snail:
 **0.2.0** Basic MVC                 - its basic  
 **0.1.0** watering_cli.rb           - separated into classes, also created web UI  
 **0.0.0** watering_cli_prototype.rb -  it works and it's brute forced  
+
+------------------
+
+### Resources
+
+#### Structure
+Structuring Sinatra Applications - https://nickcharlton.net/posts/structuring-sinatra-applications.html
+
+#### Testing
+Sinatra Tests 101 - RSpec - https://binarylies.ghost.io/sinatra-tests-101/
+Testing a Sinatra app - http://testing-for-beginners.rubymonstas.org/rack_test/sinatra.html
+Model Testing in RSpec for a Sinatra App - https://backend.turing.io/module2/lessons/model_testing_in_rspec_for_sinatra_app

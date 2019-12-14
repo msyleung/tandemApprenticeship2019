@@ -1,0 +1,18 @@
+<% if plants.empty? %>
+  Nothing to water!
+<% else %>
+  Please water the following: <br>
+  <center>
+    <% plants.sort_by(&:name).each do |plant| %>
+    <div id="wrapper">
+      <span class="hover">
+        <a href="/plants/<%=plant.id%>"><%= plant.name %></a>
+        🚰
+      </span>
+      <p class="text">
+        Care instructions: water after <%= plant.water_after %> days.
+      </p>
+    </div>
+    <% end %>
+  </center>
+<% end %>

@@ -1,20 +1,15 @@
-<!--- pagination, include locals: current_day --->
+<!--- turn day.date into a variable? --->
 <%= erb :'partials/_pagination', locals: { current_day: day.date } %>
 
-<h3 class="margin" >
-  <% word_date = '%A, %B %d, %Y' %>
-  <%= day.date.strftime('%A, %B %d, %Y') %>
-</h3>
-<% if plants.empty? %>
-  Nothing to water!
-<% else %>
-  Please water the following
-  <% if plants.size > 1 %>
-    <%= plants.size %> plants
-  <% end %>: <br>
-  <center>
-  <% plants.sort.each do |plant| %>
-    <%= plant.name %><br>
-  <% end %>
-  </center>
-<% end %>
+<div class="row">
+  <div class="col-sm-3 col-md-6">
+    <h3 class="margin" >
+      <% word_date = '%A, %B %d, %Y' %>
+      <%= day.date.strftime('%A, %B %d, %Y') %>
+    </h3>
+    <%= erb :'partials/_water', locals: { plants: plants } %>
+  </div>
+  <div class="col-sm-9 col-md-6">
+  <%= erb :'partials/_calendar', locals: { day: day.date } %>
+  </div>
+</div>

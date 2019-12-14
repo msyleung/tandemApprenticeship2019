@@ -1,12 +1,16 @@
 <% if @today_plants %>
   <%= erb :'partials/_page', locals: { day: @today, plants: @today_plants } %>
+
   <p>
   <p align="center">
-    <%= greeting() %> There are <%= @today_plants.size %> plants that need attention today!</p>
-<% else %>
-  <div class="container-fluid text-left" >
-    <p align="center" style="margin-top: 20px">
-      <%= greeting() %> Today is <%= Date.today %>
-      <br>There are no plants that need attention today!</p>
-  </div>
+    <%= greeting() %>
+    There
+    <% if @today_plants.size > 1%>
+      are <%= @today_plants.size %> plants that need
+    <% elsif @today_plants.size == 1 %>
+      is 1 plant that needs
+    <% else %>
+      are no plants that need
+    <% end %>
+    attention today!</p>
 <% end %>
