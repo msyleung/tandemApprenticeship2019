@@ -39,6 +39,7 @@ usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [
 ------------------
 
 ### Test Suites
+`rake db:test:prepare`
 `rspec -I . --format doc`
 - Test for 5 year difference in dates (big data)
 

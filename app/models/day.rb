@@ -4,6 +4,7 @@ class Day < ActiveRecord::Base
   has_many :plant_days, dependent: :destroy
   has_many :plants, through: :plant_days
 
+  validates :date, presence: true
   validates_uniqueness_of :date #there can only be one date
 
   def self.today

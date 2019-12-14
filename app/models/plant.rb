@@ -4,6 +4,9 @@ class Plant < ActiveRecord::Base
   has_many :plant_days, dependent: :destroy
   has_many :days, through: :plant_days
 
+  validates :name, presence: true
+  validates :water_after, presence: true, numericality: { only_integer: true, greater_than: 0 }
+
   def self.find_closest_day(day)
     sorted_days = self.days.all.sort_by(&:date)
     if day.between?(sorted_days.first, sorted_days.last)
