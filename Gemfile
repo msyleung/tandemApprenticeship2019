@@ -7,8 +7,6 @@ gem 'sinatra-contrib', require: false
 gem 'activesupport'
 gem 'sinatra-activerecord'
 gem 'rake'
-# Database
-gem 'sqlite3'
 # Calendar view
 gem 'calendar_helper', '~> 0.2.6'
 
@@ -19,4 +17,11 @@ end
 group :test, :development do
   gem 'better_errors'
   gem 'pry'
+  # Database
+  gem 'sqlite3'
+end
+
+group :production do
+  # Database for Heroku
+  gem 'pg'
 end

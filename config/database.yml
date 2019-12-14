@@ -12,7 +12,7 @@ development:
   pool: 2
 
 production:
-  adapter: sqlite3
+  adapter: postgresql
   encoding: unicode
-  database: plant_production.sqlite
+  database: plant_production
   pool: 2
