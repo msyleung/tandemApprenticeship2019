@@ -4,14 +4,20 @@ require 'bundler'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
 ActiveRecord::Base.establish_connection(
-  if ENV['SINATRA_ENV'].production?
-    :adapter => "postgresql",
-    :database => "db/plant_#{ENV['SINATRA_ENV']}"
-  else
   :adapter => "sqlite3",
-  :database => "db/plant_#{ENV['SINATRA_ENV']}.sqlite"
-  end
-)
+  :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
+ )
+end
+
+configure :production do
+ db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')
+
+ ActiveRecord::Base.establish_connection(
+   :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+   :database => db.path[1..-1],
+   :encoding => 'utf8'
+ )
+end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
