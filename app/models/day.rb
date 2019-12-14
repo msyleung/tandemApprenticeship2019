@@ -17,8 +17,7 @@ class Day < ActiveRecord::Base
   end
 
   def self.count_days(start_date, end_date)
-    # count days between start_date to end_date, adding one to include end_date
-    ((end_date - start_date + 1.day) / 1.day).to_i
+    (end_date - start_date).to_i
   end
 
   def self.create_days_in_range(start_date, end_date)
@@ -29,12 +28,9 @@ class Day < ActiveRecord::Base
     end
   end
 
-  # def self.find_or_create_day(date) # does this function exist already
-  #   (day = Day.where(date: date).first) ? day : Day.create(date: date)
-  # end
-
   def self.check_weekday(date)
     date = date.is_a?(Date) ? date : (Date.parse(date) rescue nil)
+    raise StandardError if date.nil?
     case date.wday
     when 1..5  # Monday - Friday, ya gucci
       Day.find_or_create_by(date: date)
@@ -42,8 +38,6 @@ class Day < ActiveRecord::Base
       Day.find_or_create_by(date: date.yesterday)
     when 0     # if Sunday, do it Monday
       Day.find_or_create_by(date: date.tomorrow)
-    else       # ??? it shouldn't go here but just in case
-      raise StandardError
     end
   end
 

@@ -32,21 +32,18 @@ class Plant < ActiveRecord::Base
   end
 
   def water_all_days(start_date, end_date)
-    # this manually sets dates (change plox)
+    result = false
     date = start_date
     while date < end_date
       water_specific(date)
-      date += (self.water_after.to_i).days
+      date += (self.water_after).days
+      result = true
     end
-    true
+    return result
   end
 
   # this logic does not allow for someone to make a mistake and water on a wrong date
   # if there is a mistake, all future PlantDays should be destroyed
   # and the new start_date for this Plant should be its last_watered_date
-
-  def test
-    42
-  end
 
 end

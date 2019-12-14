@@ -13,18 +13,24 @@
 ActiveRecord::Schema.define(version: 2019_12_12_043804) do
 
   create_table "days", force: :cascade do |t|
-    t.date "date"
+    t.date "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plant_days", force: :cascade do |t|
-    t.integer "plant_id"
-    t.integer "day_id"
+    t.integer "plant_id", default: 0, null: false
+    t.integer "day_id", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plants", force: :cascade do |t|
-    t.string "name"
-    t.string "water_after"
+    t.string "name", default: "", null: false
+    t.integer "water_after", default: 0, null: false
     t.datetime "watered_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

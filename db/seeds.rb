@@ -2,7 +2,9 @@
 plant_list = JSON.parse(File.read('./Tandem_Apprentice_2019_Challenge/Apprentice_WeGrowInTandem_Data.json'))
 
 plant_list.each do |plant|
-  Plant.create(plant) # not find_or_create_by because you can have multiples of the same plant
+  if plant['water_after'].to_i > 0
+    Plant.create(name: plant['name'], water_after: plant['water_after']) # not find_or_create_by because you can have multiples of the same plant
+  end
 end
 
 start, finish = Day.set_dates
