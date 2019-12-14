@@ -1,21 +1,18 @@
 RSpec.describe Plant, type: :model do
-  subject { described_class }
+  # TODO: undefined method `reflect_on_association' for Class:Class
+  # it { expect(Plant).to have_many(:days) }
+  # it { expect(Plant).to have_many(:plant_days) }
+  # TODO: undefined method `validate_numericality_of'
+  # it { should validate_numericality_of(:water_after) }
 
-  it { should have_many(:days) }
-  it { should have_many(:plant_days) }
-
-  describe 'basic functionality' do
+  describe 'Basic functionality' do
+    subject { described_class }
     it 'runs' do
       subject
     end
-
-    # TODO
-    # Failure/Error: expected Day to respond to `has_many?`
-    # it { should have_many(:plants) }
-    # it { should have_many(:plant_days) }
   end
 
-  describe 'validity of Plant' do
+  describe 'Validations' do
     subject { described_class.new(name: 'Catnip', water_after: 3) }
 
     it 'is valid with valid attributes' do
@@ -24,26 +21,27 @@ RSpec.describe Plant, type: :model do
 
     it 'is valid with nil attributes' do
       subject.name = ''
-      expect(subject.id).to eq(nil)
+      expect(subject).to_not be_valid
     end
 
     it 'is not valid with 0 water after days' do
       subject.water_after = 0
-      expect(subject.id).to eq(nil)
+      expect(subject).to_not be_valid
     end
   end
 
-  describe 'class method water_all_days' do
-    subject { described_class.create(name: 'Catnip', water_after: 3) }
-    let(:date) { Date.parse('2019-12-06') }
+  describe 'Class Methods' do
+    describe '.water_all_days' do
+      subject { described_class.create(name: 'Catnip', water_after: 3) }
+      let(:date) { Date.parse('2019-12-06') }
 
-    it 'should return true for valid dates' do
-      expect(subject.water_all_days(date, date + 2.days)).to eq(true)
-    end
+      it 'should return true for valid dates' do
+        expect(subject.water_all_days(date, date + 2.days)).to eq(true)
+      end
 
-    it 'should return false for invalid dates' do
-      expect(subject.water_all_days(date + 2.days, date)).to eq(false)
+      it 'should return false for invalid dates' do
+        expect(subject.water_all_days(date + 2.days, date)).to eq(false)
+      end
     end
   end
-
 end

@@ -1,7 +1,7 @@
 RSpec.describe Day, type: :model do
   subject { described_class }
 
-  describe 'basic functionality' do
+  describe 'Basic functionality' do
     it 'runs' do
       subject
     end
@@ -12,11 +12,12 @@ RSpec.describe Day, type: :model do
 
     # TODO
     # Failure/Error: expected Day to respond to `has_many?`
+    # needs shoulda-matchers gem, but still receiving error
     # it { should have_many(:plants) }
     # it { should have_many(:plant_days) }
   end
 
-  describe 'validity of Day' do
+  describe 'Validations' do
     subject { described_class.new(date: 'Dec 07 2019') }
 
     it 'is valid with valid attributes' do
@@ -25,7 +26,7 @@ RSpec.describe Day, type: :model do
 
     it 'is valid with nil attributes' do
       subject.date = ''
-      expect(subject.id).to eq(nil)
+      expect(subject).to_not be_valid
     end
 
     it 'is not valid with pre-existing date' do
@@ -34,27 +35,29 @@ RSpec.describe Day, type: :model do
     end
   end
 
-  describe 'class method count_day' do
-    let(:date) { Date.parse('2019-12-07') }
+  describe 'Class Methods' do
+    describe '.count_day' do
+      let(:date) { Date.parse('2019-12-07') }
 
-    it 'should equal 2 days for days between Dec 7 and Dec 9' do
-      expect(described_class.count_days(date, date + 2.days)).to eq(2)
+      it 'should return 2 days for days between Dec 7 and Dec 9' do
+        expect(described_class.count_days(date, date + 2.days)).to eq(2)
+      end
+
+      it 'should return 0 days for days between Dec 7 and Dec 7' do
+        expect(described_class.count_days(date, date + 0.days)).to eq(0)
+      end
+
+      it 'should return -14 days for days between Dec 21 and Dec 7' do
+        expect(described_class.count_days(date + 14.days, date)).to eq(-14)
+      end
     end
 
-    it 'should equal 0 days for days between Dec 7 and Dec 7' do
-      expect(described_class.count_days(date, date + 0.days)).to eq(0)
-    end
+    describe '.check_weekday' do
+      let(:date) { Date.parse('2019-12-15') }
 
-    it 'should equal -14 days for days between Dec 21 and Dec 7' do
-      expect(described_class.count_days(date + 14.days, date)).to eq(-14)
-    end
-  end
-
-  describe 'class method check_weekday' do
-    let(:date) { Date.parse('2019-12-15') }
-
-    it 'should go from Sunday to Monday' do
-      expect(described_class.check_weekday(date)).to eq(Day.where(date: '2019-12-16').first)
+      it 'should receive Sunday but return Monday' do
+      expect(described_class.check_weekday(date)).to eq(Day.where(date: '2019-  12-16').first)
+      end
     end
   end
 

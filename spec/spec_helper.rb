@@ -1,5 +1,7 @@
 require_relative '../config/environment'
 
+ENV['SINATRA_ENV'] = 'test'
+
 ActiveRecord::Base.logger = Logger.new('spec/spec.log')
 
 RSpec.configure do |config|

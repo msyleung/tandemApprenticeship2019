@@ -1,3 +1,10 @@
+test:
+  adapter: sqlite3
+  encoding: unicode
+  database: plant_test.sqlite
+  pool: 2
+
+
 development:
   adapter: sqlite3
   encoding: unicode
