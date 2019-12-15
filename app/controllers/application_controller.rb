@@ -2,6 +2,7 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
   helpers DateHelper
+  helpers RequestHelper
 
   configure do
     set :public_folder, 'app/public'
@@ -17,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    @today = Day.where(date: '2019-12-16').first#Day.today
+    @today = Day.today
     @today_plants = @today.plants
     erb :index
   end
