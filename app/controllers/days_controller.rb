@@ -1,5 +1,3 @@
-require './config/environment'
-
 class DaysController < ApplicationController
 
   get '/days' do

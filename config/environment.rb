@@ -16,4 +16,8 @@ end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
-Dir.glob('./app/{helpers,controllers,models}/*.rb').each { |file| require file }
+# Dir.glob('./app/{helpers,controllers,models}/*.rb').each { |file| require file }
+Dir.glob('./app/helpers/*.rb').each { |file| require file }
+require './app/controllers/application_controller.rb'
+Dir.glob('./app/controllers/{plants,days}_controller.rb').each { |file| require file }
+Dir.glob('./app/models/*.rb').each { |file| require file }

@@ -1,5 +1,3 @@
-require './config/environment'
-
 class PlantsController < ApplicationController
 
   get '/plants' do
