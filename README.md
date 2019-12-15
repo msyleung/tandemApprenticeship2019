@@ -25,11 +25,12 @@ Run `bundle install`
 ------------------
 
 ### Web Usage
+Visit Heroku: https://tandem-apprenticeship2019.herokuapp.com/
+
+Or install locally via Installation
 In the root directory, run `rake db:migrate db:seed` to create tables and populate the database  
 Then, run `rackup -p 4567`  
 Go to `http://localhost:4567/`  
-
-For Version 1, visit https://tandem-apprenticeship2019.herokuapp.com/
 
 
 ### CLI Usage
