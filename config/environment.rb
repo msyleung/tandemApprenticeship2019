@@ -1,17 +1,17 @@
 require 'bundler'
+Bundler.require
 
 ENV['SINATRA_ENV'] ||= "development"
 
 configure :development do
-  Bundler.require(:default, ENV['SINATRA_ENV'])
+  # Bundler.require(:default, ENV['SINATRA_ENV'])
   ActiveRecord::Base.establish_connection(
    :adapter => 'postgresql',
    :database => "plant_#{ENV['SINATRA_ENV']}"
  )end
 
 configure :production do
-  Bundler.require
-  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] ||'postgres://localhost/mydb')
+   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] ||'postgres://localhost/mydb')
 end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
