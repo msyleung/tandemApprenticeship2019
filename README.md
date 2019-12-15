@@ -1,5 +1,5 @@
 # Tandem Apprenticeship 2019 Challenge
-## Prompt: We grow in Tandem! :plant-emoji:
+## Prompt: We grow in Tandem! 🌿
 
 ### Goal
 Your goal is to create an application that generates a watering schedule for the next 12 weeks for all of our plants.
@@ -19,23 +19,26 @@ Your goal is to create an application that generates a watering schedule for the
 ------------------
 
 ### Installation
-In the root directory  
-Run `bundle install`
+Clone the directory, then run `bundle install`  
+Run `rake db:create db:migrate db:seed` to create tables and populate the database  
 
 ------------------
 
 ### Web Usage
 Visit Heroku: https://tandem-apprenticeship2019.herokuapp.com/
 
-Or install locally via Installation
-In the root directory, run `rake db:migrate db:seed` to create tables and populate the database  
+Or install locally via Installation  
 Then, run `rackup -p 4567`  
 Go to `http://localhost:4567/`  
 
 
 ### CLI Usage
 ```
-Usage: ruby watering_cli.rb [-g guide] [-v] [-d date] date string in 'Y-M-D' format [-p plant] specific plant name [-a show all]
+Usage: ruby watering_cli.rb
+   -g, --guide      Show this help guide
+   -d, --date       Shows all plants to water on given date
+   -p, --plant      Shows all dates for given plant
+   -a, --all        Displays all plants and dates
 ```
 
 ------------------
@@ -123,6 +126,9 @@ BUNDLED WITH
 Structuring Sinatra Applications - https://nickcharlton.net/posts/structuring-sinatra-applications.html
 
 #### Testing
-Sinatra Tests 101 - RSpec - https://binarylies.ghost.io/sinatra-tests-101/
-Testing a Sinatra app - http://testing-for-beginners.rubymonstas.org/rack_test/sinatra.html
-Model Testing in RSpec for a Sinatra App - https://backend.turing.io/module2/lessons/model_testing_in_rspec_for_sinatra_app
+Sinatra Tests 101 - RSpec - https://binarylies.ghost.io/sinatra-tests-101/  
+Testing a Sinatra app - http://testing-for-beginners.rubymonstas.org/rack_test/sinatra.html  
+Model Testing in RSpec for a Sinatra App - https://backend.turing.io/module2/lessons/model_testing_in_rspec_for_sinatra_app 
+
+#### CLI
+https://stackoverflow.com/questions/26434923/parse-command-line-arguments-in-a-ruby-script
