@@ -32,14 +32,15 @@ class Plant < ActiveRecord::Base
     # self.guard_overwater(day)
     day = Day.check_weekday(day)
     PlantDay.find_or_create_by(plant_id: self.id, day_id: day.id)
+    day.date
   end
 
   def water_all_days(start_date, end_date)
     result = false
     date = start_date
-    while date < end_date
-      water_specific(date)
-      date += (self.water_after).days
+    while date <= end_date
+      self.watered_on = water_specific(date)
+      date = self.watered_on + (self.water_after).days
       result = true
     end
     return result
