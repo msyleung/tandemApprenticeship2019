@@ -4,7 +4,8 @@ class PlantsController < ApplicationController
 
   get '/plants' do
     @plants ||= Plant.all
-    erb :'plants/index'
+    link = :'plants/index'
+    pretty_response(link, @plants)
   end
 
   get '/plants/:id' do

@@ -35,7 +35,7 @@ Go to `http://localhost:4567/`
 
 ### CLI Usage
 ```
-usage: watering_cli.rb [-d] [today/date in Y-M-D format] [-p] [specific plant] [-a] [show all]
+Usage: ruby watering_cli.rb [-g guide] [-v] [-d date] date string in 'Y-M-D' format [-p plant] specific plant name [-a show all]
 ```
 
 ------------------

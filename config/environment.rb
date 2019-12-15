@@ -4,7 +4,8 @@ Bundler.require
 ENV['SINATRA_ENV'] ||= "development"
 
 configure :development do
- ActiveRecord::Base.establish_connection(
+  Bundler.require(:default, ENV['SINATRA_ENV'])
+  ActiveRecord::Base.establish_connection(
    :adapter => 'postgresql',
    :database => "plant_#{ENV['SINATRA_ENV']}"
  )end

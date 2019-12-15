@@ -2,6 +2,7 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
   helpers DateHelper
+  helpers RequestHelper
 
   configure do
     set :public_folder, 'app/public'

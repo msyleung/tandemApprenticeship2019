@@ -6,7 +6,7 @@ plant_list.each do |plant|
   # not find_or_create_by because you can have multiples of the same plant
 end
 
-start, finish = Day.set_dates('Dec 09 2019', 12)
+start, finish = Day.set_dates
 Day.create_days_in_range(start.date, finish.date)
 
 # water all plants
