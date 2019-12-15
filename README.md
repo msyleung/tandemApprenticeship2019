@@ -25,10 +25,11 @@ Run `bundle install`
 ------------------
 
 ### Web Usage
-After having completed the installation process  
 In the root directory, run `rake db:migrate db:seed` to create tables and populate the database  
 Then, run `rackup -p 4567`  
-Go to `http://localhost:4567/`
+Go to `http://localhost:4567/`  
+
+For Version 1, visit https://tandem-apprenticeship2019.herokuapp.com/
 
 
 ### CLI Usage
@@ -67,19 +68,6 @@ Plant
     is valid with nil attributes
     is not valid with 0 water after days
 ```
-
-------------------
-
-### Complexity
-
-
-------------------
-
-### Issues
-- ~Disrespecting the MVC :(~
-- ~Logic is too complicated~
-- ~Plant date logic breaks for `water_after: 364 days` for some reason~
-- ~Not~ maybe scalable
 
 ------------------
 
