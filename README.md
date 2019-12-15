@@ -6,6 +6,8 @@ Your goal is to create an application that generates a watering schedule for the
 
 <!-- We would also like to see a README which includes any information about how to run the code, any known issues or complexity we should look out for, and any additional features you would like to have added to make your scheduler even more awesome. -->
 
+![alt text](https://github.com/msyleung/tandemApprenticeship2019/blob/master/app/public/images/preview.png "Preview")
+
 ------------------
 
 ### Assumptions / Rules
