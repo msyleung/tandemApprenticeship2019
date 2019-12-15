@@ -91,10 +91,29 @@ Web with :point_up_2: `gem 'friendly_id'` and use 'slug' for plants :snail:
 
 ------------------
 
-### Version History
-**0.2.0** Basic MVC                 - its basic  
-**0.1.0** watering_cli.rb           - separated into classes, also created web UI  
-**0.0.0** watering_cli_prototype.rb -  it works and it's brute forced  
+### Dependencies
+```
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport
+  better_errors
+  calendar_helper (~> 0.2.6)
+  pg
+  pry
+  rake
+  rspec
+  sinatra (= 2.0.7)
+  sinatra-activerecord
+  sinatra-contrib
+
+RUBY VERSION
+   ruby 2.4.1p111
+
+BUNDLED WITH
+   1.17.3
+```
 
 ------------------
 
