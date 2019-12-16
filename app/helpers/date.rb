@@ -20,7 +20,7 @@ module DateHelper
   end
 
   def greeting
-    case Time.now.hour
+    case Time.zone.now.hour
     when 6..11
       "Good morning!"
     when 12..16
