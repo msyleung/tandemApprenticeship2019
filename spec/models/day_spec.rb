@@ -9,16 +9,10 @@ RSpec.describe Day, type: :model do
     it 'can use Day class methods' do
       expect(subject.count_days(Date.parse('Dec 09 2019'), Date.parse('Dec 16 2019'))).to eq(7)
     end
-
-    # TODO
-    # Failure/Error: expected Day to respond to `has_many?`
-    # needs shoulda-matchers gem, but still receiving error
-    # it { should have_many(:plants) }
-    # it { should have_many(:plant_days) }
   end
 
   describe 'Validations' do
-    subject { described_class.new(date: 'Dec 07 2019') }
+    subject { described_class.create(date: 'Dec 10 2019') }
 
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
@@ -30,7 +24,6 @@ RSpec.describe Day, type: :model do
     end
 
     it 'is not valid with pre-existing date' do
-      subject.date = 'Dec 16 2019'
       expect(subject).to_not be_valid
     end
   end
@@ -56,7 +49,7 @@ RSpec.describe Day, type: :model do
       let(:date) { Date.parse('2019-12-15') }
 
       it 'should receive Sunday but return Monday' do
-      expect(described_class.check_weekday(date)).to eq(Day.where(date: '2019-  12-16').first)
+        expect(described_class.check_weekday(date).date).to eq(Date.parse('2019-12-16'))
       end
     end
   end
